@@ -17,7 +17,14 @@
 #include "freertos/semphr.h"
 #include "port/oc_clock.h"
 #include "port/oc_log.h"
-#include "lwip/timers.h"
+
+// {{ ESP32 OCF PORTING
+//#include "lwip/timers.h"
+#include "freertos/task.h"
+#include <time.h>
+#include <sys/time.h>
+// }}
+
 #include <time.h>
 
 void

@@ -36,6 +36,12 @@
 
 static const char* TAG = "ipadapter";
 
+// {{ ESP32 OCF PORTING
+#define SUPPORT_IPV6 0
+#include "lwip/ip_addr.h"
+#include "lwip/inet.h"
+// }}
+
 // most of function declaration is under iotivity-constrained/port/oc_connectivity.h and oc_network_events_mutex.h
 #ifndef IFA_MULTICAST
 #define IFA_MULTICAST 7
@@ -149,7 +155,7 @@ static int add_mcast_sock_to_ipv4_mcast_group(int mcast_sock,
         print_error("get ip4 ret:%d\n", err);
     }
 
-    inet_addr_from_ipaddr(&imreq.imr_interface, &ip_info.ip);
+    inet_addr_from_ip4addr(&imreq.imr_interface, &ip_info.ip);
     imreq.imr_multiaddr.s_addr = htonl(ALL_COAP_NODES_V4);
     ESP_LOGI(TAG, "Configured IPV4 Multicast address %s", inet_ntoa(imreq.imr_multiaddr.s_addr));
 
@@ -177,6 +183,7 @@ static int add_mcast_sock_to_ipv4_mcast_group(int mcast_sock,
 }
 #endif /* OC_IPV4 */
 
+#if SUPPORT_IPV6
 static int add_mcast_sock_to_ipv6_mcast_group(int mcast_sock, int interface_index)
 {
     int err = 0;
@@ -243,17 +250,22 @@ static int add_mcast_sock_to_ipv6_mcast_group(int mcast_sock, int interface_inde
 
   return 0;
 }
+#endif
 
 static int configure_mcast_socket(int mcast_sock, int sa_family) {
     int ret = 0;
+
+#if SUPPORT_IPV6
     /* Accordingly handle IPv6/IPv4 addresses */
     if (sa_family == AF_INET6) {
         ret += add_mcast_sock_to_ipv6_mcast_group(mcast_sock, NULL);
     }
+#endif
+
 #ifdef OC_IPV4
-    else if (sa_family == AF_INET) {
+    if (sa_family == AF_INET) {
       ret += add_mcast_sock_to_ipv4_mcast_group(mcast_sock, NULL,
-                                                NULL);
+                                                0);
     }
 #endif /* OC_IPV4 */
 
@@ -548,7 +560,7 @@ void oc_send_discovery_request(oc_message_t *message)
   if (err != ESP_OK) {
       print_error("get ip ret:%d\n", err);
   }
-  inet_addr_from_ipaddr(&iaddr, &ip_info.ip);
+  inet_addr_from_ip4addr(&iaddr, &ip_info.ip);
 
   // Assign the IPv4 multicast source interface, via its IP
   // (only necessary if this socket is IPV4 only)
@@ -582,7 +594,7 @@ connectivity_ipv4_init(ip_context_t *dev)
   if (err != ESP_OK) {
       print_error("get ip4 ret:%d\n", err);
   }
-  inet_addr_from_ipaddr(&l->sin_addr, &ip_info.ip);
+  inet_addr_from_ip4addr(&l->sin_addr, &ip_info.ip);
   l->sin_port = 0;
 
 #ifdef OC_SECURITY

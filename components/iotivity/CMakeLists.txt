@@ -59,6 +59,15 @@ idf_component_register(SRCS "${srcs}"
                     INCLUDE_DIRS "${include_dirs}"
                     REQUIRES lwip)
 
+## Fix following error:
+## error: 'ALL_OCF_NODES_SL' defined but not used [-Werror=unused-const-variable=]
+set_source_files_properties(adapter/src/ipadapter.c PROPERTIES COMPILE_FLAGS -Wno-unused-const-variable)
+
+# set compiler flag for iotivity
+target_compile_definitions (${COMPONENT_LIB} PUBLIC OC_DYNAMIC_ALLOCATION)
+target_compile_definitions (${COMPONENT_LIB} PUBLIC OC_IPV4)
+target_compile_definitions (${COMPONENT_LIB} PUBLIC OC_SERVER)
+
 # Silence format truncation warning, until it is fixed upstream
 ## set_source_files_properties(libcoap/src/coap_debug.c PROPERTIES COMPILE_FLAGS -Wno-format-truncation)
 

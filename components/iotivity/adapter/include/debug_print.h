@@ -60,13 +60,22 @@ void print_debug(const char* data, const unsigned int len, const char* note, int
  *
  * @return noreturn
  * */
+#if 1
 #define print_error(fmt, args...)  \
     do { \
         printf("[error]:");\
         printf(fmt, ##args); \
-        printf(",heap size:%d%s", system_get_free_heap_size(), "\r\n"); \
         vTaskDelay(2000 / portTICK_RATE_MS);    \
     } while(1)
+#else
+#define print_error(fmt, args...)  \
+	  do { \
+		  printf("[error]:");\
+		  printf(fmt, ##args); \
+		  printf(",heap size:%d%s", system_get_free_heap_size(), "\r\n"); \
+		  vTaskDelay(2000 / portTICK_RATE_MS);	  \
+	  } while(1)
+#endif
 
 #if APP_DEBUG
 

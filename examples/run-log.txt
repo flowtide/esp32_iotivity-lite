@@ -1,0 +1,1346 @@
+Python requirements from C:\Users\hillk\Desktop\esp-idf\requirements.txt are satisfied.
+--- idf_monitor on COM29 115200 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0018,len:4
+load:0x3fff001c,len:6908
+load:0x40078000,len:14076
+ho 0 tail 12 room 4
+load:0x40080400,len:4304
+entry 0x400806e8
+I (72) boot: Chip Revision: 1
+I (72) boot_comm: chip revision: 1, min. bootloader chip revision: 0
+I (42) boot: ESP-IDF v4.0.1-dirty 2nd stage bootloader
+I (42) boot: compile time 12:09:49
+I (42) boot: Enabling RNG early entropy source...
+I (47) boot: SPI Speed      : 40MHz
+I (51) boot: SPI Mode       : DIO
+I (55) boot: SPI Flash Size : 2MB
+I (59) boot: Partition Table:
+I (63) boot: ## Label            Usage          Type ST Offset   Length
+I (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (85) boot:  2 factory          factory app      00 00 00010000 00100000
+I (92) boot: End of partition table
+I (96) boot_comm: chip revision: 1, min. application chip revision: 0
+I (104) esp_image: segment 0: paddr=0x00010020 vaddr=0x3f400020 size=0x1d1ac (119212) map
+I (155) esp_image: segment 1: paddr=0x0002d1d4 vaddr=0x3ffb0000 size=0x02e3c ( 11836) load
+I (160) esp_image: segment 2: paddr=0x00030018 vaddr=0x400d0018 size=0x7b8d4 (506068) map
+0x400d0018: _stext at ??:?
+
+I (343) esp_image: segment 3: paddr=0x000ab8f4 vaddr=0x3ffb2e3c size=0x00bfc (  3068) load
+I (344) esp_image: segment 4: paddr=0x000ac4f8 vaddr=0x40080000 size=0x00400 (  1024) load
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+I (350) esp_image: segment 5: paddr=0x000ac900 vaddr=0x40080400 size=0x15140 ( 86336) load
+I (408) boot: Loaded app from partition at offset 0x10000
+I (408) boot: Disabling RNG early entropy source...
+I (408) cpu_start: Pro cpu up.
+I (412) cpu_start: Application information:
+I (417) cpu_start: Project name:     esp32_server
+I (422) cpu_start: App version:      24bfb82-dirty
+I (428) cpu_start: Compile time:     Jul 21 2020 12:07:12
+I (434) cpu_start: ELF file SHA256:  69809843b5ba2b25...
+I (440) cpu_start: ESP-IDF:          v4.0.1-dirty
+I (445) cpu_start: Starting app cpu, entry point is 0x400812f4
+0x400812f4: call_start_cpu1 at C:/Users/hillk/Desktop/esp-idf/components/esp32/cpu_start.c:271
+
+I (0) cpu_start: App cpu up.
+V (455) memory_layout: reserved range is 0x3f41d1a4 - 0x3f41d1cc
+D (461) memory_layout: Checking 7 reserved memory ranges:
+D (467) memory_layout: Reserved memory range 0x3ffae000 - 0x3ffae6e0
+D (473) memory_layout: Reserved memory range 0x3ffb0000 - 0x3ffba148
+D (480) memory_layout: Reserved memory range 0x3ffe0000 - 0x3ffe0440
+D (486) memory_layout: Reserved memory range 0x3ffe3f20 - 0x3ffe4350
+D (492) memory_layout: Reserved memory range 0x40070000 - 0x40078000
+D (499) memory_layout: Reserved memory range 0x40078000 - 0x40080000
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+D (505) memory_layout: Reserved memory range 0x40080000 - 0x4009553d
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+D (512) memory_layout: Building list of available memory regions:
+V (518) memory_layout: Examining memory region 0x3ffae000 - 0x3ffb0000
+V (524) memory_layout: Start of region 0x3ffae000 - 0x3ffb0000 overlaps reserved 0x3ffae000 - 0x3ffae6e0
+D (534) memory_layout: Available memory region 0x3ffae6e0 - 0x3ffb0000
+V (541) memory_layout: Examining memory region 0x3ffb0000 - 0x3ffb8000
+V (547) memory_layout: Region 0x3ffb0000 - 0x3ffb8000 inside of reserved 0x3ffb0000 - 0x3ffba148
+V (556) memory_layout: Examining memory region 0x3ffb8000 - 0x3ffc0000
+V (563) memory_layout: Start of region 0x3ffb8000 - 0x3ffc0000 overlaps reserved 0x3ffb0000 - 0x3ffba148
+D (572) memory_layout: Available memory region 0x3ffba148 - 0x3ffc0000
+V (579) memory_layout: Examining memory region 0x3ffc0000 - 0x3ffc2000
+D (585) memory_layout: Available memory region 0x3ffc0000 - 0x3ffc2000
+V (592) memory_layout: Examining memory region 0x3ffc2000 - 0x3ffc4000
+D (599) memory_layout: Available memory region 0x3ffc2000 - 0x3ffc4000
+V (605) memory_layout: Examining memory region 0x3ffc4000 - 0x3ffc6000
+D (612) memory_layout: Available memory region 0x3ffc4000 - 0x3ffc6000
+V (618) memory_layout: Examining memory region 0x3ffc6000 - 0x3ffc8000
+D (625) memory_layout: Available memory region 0x3ffc6000 - 0x3ffc8000
+V (632) memory_layout: Examining memory region 0x3ffc8000 - 0x3ffca000
+D (638) memory_layout: Available memory region 0x3ffc8000 - 0x3ffca000
+V (645) memory_layout: Examining memory region 0x3ffca000 - 0x3ffcc000
+D (651) memory_layout: Available memory region 0x3ffca000 - 0x3ffcc000
+V (658) memory_layout: Examining memory region 0x3ffcc000 - 0x3ffce000
+D (665) memory_layout: Available memory region 0x3ffcc000 - 0x3ffce000
+V (671) memory_layout: Examining memory region 0x3ffce000 - 0x3ffd0000
+D (678) memory_layout: Available memory region 0x3ffce000 - 0x3ffd0000
+V (684) memory_layout: Examining memory region 0x3ffd0000 - 0x3ffd2000
+D (691) memory_layout: Available memory region 0x3ffd0000 - 0x3ffd2000
+V (698) memory_layout: Examining memory region 0x3ffd2000 - 0x3ffd4000
+D (704) memory_layout: Available memory region 0x3ffd2000 - 0x3ffd4000
+V (711) memory_layout: Examining memory region 0x3ffd4000 - 0x3ffd6000
+D (717) memory_layout: Available memory region 0x3ffd4000 - 0x3ffd6000
+V (724) memory_layout: Examining memory region 0x3ffd6000 - 0x3ffd8000
+D (731) memory_layout: Available memory region 0x3ffd6000 - 0x3ffd8000
+V (737) memory_layout: Examining memory region 0x3ffd8000 - 0x3ffda000
+D (744) memory_layout: Available memory region 0x3ffd8000 - 0x3ffda000
+V (750) memory_layout: Examining memory region 0x3ffda000 - 0x3ffdc000
+D (757) memory_layout: Available memory region 0x3ffda000 - 0x3ffdc000
+V (764) memory_layout: Examining memory region 0x3ffdc000 - 0x3ffde000
+D (770) memory_layout: Available memory region 0x3ffdc000 - 0x3ffde000
+V (777) memory_layout: Examining memory region 0x3ffde000 - 0x3ffe0000
+D (783) memory_layout: Available memory region 0x3ffde000 - 0x3ffe0000
+V (790) memory_layout: Examining memory region 0x3ffe0000 - 0x3ffe4000
+V (797) memory_layout: Start of region 0x3ffe0000 - 0x3ffe4000 overlaps reserved 0x3ffe0000 - 0x3ffe0440
+V (806) memory_layout: End of region 0x3ffe0440 - 0x3ffe4000 overlaps reserved 0x3ffe3f20 - 0x3ffe4350
+D (815) memory_layout: Available memory region 0x3ffe0440 - 0x3ffe3f20
+V (822) memory_layout: Examining memory region 0x3ffe4000 - 0x3ffe8000
+V (829) memory_layout: Start of region 0x3ffe4000 - 0x3ffe8000 overlaps reserved 0x3ffe3f20 - 0x3ffe4350
+D (838) memory_layout: Available memory region 0x3ffe4350 - 0x3ffe8000
+V (845) memory_layout: Examining memory region 0x3ffe8000 - 0x3fff0000
+D (851) memory_layout: Available memory region 0x3ffe8000 - 0x3fff0000
+V (858) memory_layout: Examining memory region 0x3fff0000 - 0x3fff8000
+D (865) memory_layout: Available memory region 0x3fff0000 - 0x3fff8000
+V (871) memory_layout: Examining memory region 0x3fff8000 - 0x3fffc000
+D (878) memory_layout: Available memory region 0x3fff8000 - 0x3fffc000
+V (884) memory_layout: Examining memory region 0x3fffc000 - 0x40000000
+D (891) memory_layout: Available memory region 0x3fffc000 - 0x40000000
+V (898) memory_layout: Examining memory region 0x40070000 - 0x40078000
+V (904) memory_layout: Region 0x40070000 - 0x40078000 inside of reserved 0x40070000 - 0x40078000
+V (913) memory_layout: Examining memory region 0x40078000 - 0x40080000
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (920) memory_layout: Region 0x40078000 - 0x40080000 inside of reserved 0x40078000 - 0x40080000
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (928) memory_layout: Examining memory region 0x40080000 - 0x40082000
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+0x40082000: ipc_task at C:/Users/hillk/Desktop/esp-idf/components/esp_common/src/ipc.c:56
+
+V (935) memory_layout: Region 0x40080000 - 0x40082000 inside of reserved 0x40080000 - 0x40095540
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+0x40082000: ipc_task at C:/Users/hillk/Desktop/esp-idf/components/esp_common/src/ipc.c:56
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (944) memory_layout: Examining memory region 0x40082000 - 0x40084000
+0x40082000: ipc_task at C:/Users/hillk/Desktop/esp-idf/components/esp_common/src/ipc.c:56
+
+0x40084000: spi_flash_mmap_pages at C:/Users/hillk/Desktop/esp-idf/components/spi_flash/flash_mmap.c:137
+
+V (950) memory_layout: Region 0x40082000 - 0x40084000 inside of reserved 0x40080000 - 0x40095540
+0x40082000: ipc_task at C:/Users/hillk/Desktop/esp-idf/components/esp_common/src/ipc.c:56
+
+0x40084000: spi_flash_mmap_pages at C:/Users/hillk/Desktop/esp-idf/components/spi_flash/flash_mmap.c:137
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (959) memory_layout: Examining memory region 0x40084000 - 0x40086000
+0x40084000: spi_flash_mmap_pages at C:/Users/hillk/Desktop/esp-idf/components/spi_flash/flash_mmap.c:137
+
+0x40086000: tx_pwctrl_cal at /home/aiqin/git_tree/chip7.1_phy/chip_7.1/board_code/app_test/pp/phy/phy_chip_v7_cal.c:2645 (discriminator 1)
+
+V (966) memory_layout: Region 0x40084000 - 0x40086000 inside of reserved 0x40080000 - 0x40095540
+0x40084000: spi_flash_mmap_pages at C:/Users/hillk/Desktop/esp-idf/components/spi_flash/flash_mmap.c:137
+
+0x40086000: tx_pwctrl_cal at /home/aiqin/git_tree/chip7.1_phy/chip_7.1/board_code/app_test/pp/phy/phy_chip_v7_cal.c:2645 (discriminator 1)
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (975) memory_layout: Examining memory region 0x40086000 - 0x40088000
+0x40086000: tx_pwctrl_cal at /home/aiqin/git_tree/chip7.1_phy/chip_7.1/board_code/app_test/pp/phy/phy_chip_v7_cal.c:2645 (discriminator 1)
+
+0x40088000: ppDequeueRxq_Locked at ??:?
+
+V (981) memory_layout: Region 0x40086000 - 0x40088000 inside of reserved 0x40080000 - 0x40095540
+0x40086000: tx_pwctrl_cal at /home/aiqin/git_tree/chip7.1_phy/chip_7.1/board_code/app_test/pp/phy/phy_chip_v7_cal.c:2645 (discriminator 1)
+
+0x40088000: ppDequeueRxq_Locked at ??:?
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (990) memory_layout: Examining memory region 0x40088000 - 0x4008a000
+0x40088000: ppDequeueRxq_Locked at ??:?
+
+0x4008a000: lmacTxFrame at ??:?
+
+V (997) memory_layout: Region 0x40088000 - 0x4008a000 inside of reserved 0x40080000 - 0x40095540
+0x40088000: ppDequeueRxq_Locked at ??:?
+
+0x4008a000: lmacTxFrame at ??:?
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (1006) memory_layout: Examining memory region 0x4008a000 - 0x4008c000
+0x4008a000: lmacTxFrame at ??:?
+
+0x4008c000: rcUpdateTxDoneAmpdu2 at ??:?
+
+V (1012) memory_layout: Region 0x4008a000 - 0x4008c000 inside of reserved 0x40080000 - 0x40095540
+0x4008a000: lmacTxFrame at ??:?
+
+0x4008c000: rcUpdateTxDoneAmpdu2 at ??:?
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (1021) memory_layout: Examining memory region 0x4008c000 - 0x4008e000
+0x4008c000: rcUpdateTxDoneAmpdu2 at ??:?
+
+0x4008e000: sta_input at ??:?
+
+V (1028) memory_layout: Region 0x4008c000 - 0x4008e000 inside of reserved 0x40080000 - 0x40095540
+0x4008c000: rcUpdateTxDoneAmpdu2 at ??:?
+
+0x4008e000: sta_input at ??:?
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (1037) memory_layout: Examining memory region 0x4008e000 - 0x40090000
+0x4008e000: sta_input at ??:?
+
+0x40090000: xthal_window_spill_nw at /Users/igrokhotkov/e/esp32/hal/hal/windowspill_asm.S:249
+
+V (1044) memory_layout: Region 0x4008e000 - 0x40090000 inside of reserved 0x40080000 - 0x40095540
+0x4008e000: sta_input at ??:?
+
+0x40090000: xthal_window_spill_nw at /Users/igrokhotkov/e/esp32/hal/hal/windowspill_asm.S:249
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (1053) memory_layout: Examining memory region 0x40090000 - 0x40092000
+0x40090000: xthal_window_spill_nw at /Users/igrokhotkov/e/esp32/hal/hal/windowspill_asm.S:249
+
+0x40092000: get_next_block at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:124
+ (inlined by) multi_heap_realloc_impl at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:559
+
+V (1059) memory_layout: Region 0x40090000 - 0x40092000 inside of reserved 0x40080000 - 0x40095540
+0x40090000: xthal_window_spill_nw at /Users/igrokhotkov/e/esp32/hal/hal/windowspill_asm.S:249
+
+0x40092000: get_next_block at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:124
+ (inlined by) multi_heap_realloc_impl at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:559
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (1068) memory_layout: Examining memory region 0x40092000 - 0x40094000
+0x40092000: get_next_block at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:124
+ (inlined by) multi_heap_realloc_impl at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:559
+
+0x40094000: xPortGetCoreID at C:/Users/hillk/Desktop/esp-idf/components/freertos/include/freertos/portable.h:210 (discriminator 3)
+ (inlined by) xTaskIncrementTick at C:/Users/hillk/Desktop/esp-idf/components/freertos/tasks.c:2576 (discriminator 3)
+
+V (1075) memory_layout: Region 0x40092000 - 0x40094000 inside of reserved 0x40080000 - 0x40095540
+0x40092000: get_next_block at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:124
+ (inlined by) multi_heap_realloc_impl at C:/Users/hillk/Desktop/esp-idf/components/heap/multi_heap.c:559
+
+0x40094000: xPortGetCoreID at C:/Users/hillk/Desktop/esp-idf/components/freertos/include/freertos/portable.h:210 (discriminator 3)
+ (inlined by) xTaskIncrementTick at C:/Users/hillk/Desktop/esp-idf/components/freertos/tasks.c:2576 (discriminator 3)
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+V (1084) memory_layout: Examining memory region 0x40094000 - 0x40096000
+0x40094000: xPortGetCoreID at C:/Users/hillk/Desktop/esp-idf/components/freertos/include/freertos/portable.h:210 (discriminator 3)
+ (inlined by) xTaskIncrementTick at C:/Users/hillk/Desktop/esp-idf/components/freertos/tasks.c:2576 (discriminator 3)
+
+V (1091) memory_layout: Start of region 0x40094000 - 0x40096000 overlaps reserved 0x40080000 - 0x40095540
+0x40094000: xPortGetCoreID at C:/Users/hillk/Desktop/esp-idf/components/freertos/include/freertos/portable.h:210 (discriminator 3)
+ (inlined by) xTaskIncrementTick at C:/Users/hillk/Desktop/esp-idf/components/freertos/tasks.c:2576 (discriminator 3)
+
+0x40080000: _WindowOverflow4 at C:/Users/hillk/Desktop/esp-idf/components/freertos/xtensa_vectors.S:1778
+
+D (1100) memory_layout: Available memory region 0x40095540 - 0x40096000
+V (1107) memory_layout: Examining memory region 0x40096000 - 0x40098000
+D (1114) memory_layout: Available memory region 0x40096000 - 0x40098000
+V (1120) memory_layout: Examining memory region 0x40098000 - 0x4009a000
+D (1127) memory_layout: Available memory region 0x40098000 - 0x4009a000
+V (1134) memory_layout: Examining memory region 0x4009a000 - 0x4009c000
+D (1140) memory_layout: Available memory region 0x4009a000 - 0x4009c000
+V (1147) memory_layout: Examining memory region 0x4009c000 - 0x4009e000
+D (1154) memory_layout: Available memory region 0x4009c000 - 0x4009e000
+V (1160) memory_layout: Examining memory region 0x4009e000 - 0x400a0000
+D (1167) memory_layout: Available memory region 0x4009e000 - 0x400a0000
+I (1174) heap_init: Initializing. RAM available for dynamic allocation:
+D (1181) heap_init: New heap initialised at 0x3ffae6e0
+I (1186) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+D (1192) heap_init: New heap initialised at 0x3ffba148
+I (1198) heap_init: At 3FFBA148 len 00025EB8 (151 KiB): DRAM
+I (1204) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (1210) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+D (1217) heap_init: New heap initialised at 0x40095540
+I (1222) heap_init: At 40095540 len 0000AAC0 (42 KiB): IRAM
+I (1228) cpu_start: Pro cpu start user code
+D (1240) clk: RTC_SLOW_CLK calibration value: 3264384
+V (1250) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (1250) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xE
+D (1255) intr_alloc: Connected src 46 to int 2 (cpu 0)
+V (1261) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (1267) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xC0E
+D (1275) intr_alloc: Connected src 57 to int 3 (cpu 0)
+V (1280) esp_dbg_stubs: esp_dbg_stubs_init stubs 3ffb42bc
+V (1286) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (1292) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0x40E
+D (1300) intr_alloc: Connected src 24 to int 9 (cpu 0)
+D (1306) FLASH_HAL: extra_dummy: 1
+V (1309) memspi: raw_chip_id: 164020
+
+V (1313) memspi: chip_id: 204016
+
+V (1316) memspi: raw_chip_id: 164020
+
+V (1320) memspi: chip_id: 204016
+
+D (1323) spi_flash: trying chip: issi
+D (1327) spi_flash: trying chip: gd
+D (1331) spi_flash: trying chip: generic
+I (1335) spi_flash: detected chip: generic
+I (1340) spi_flash: flash io: dio
+D (1344) chip_generic: set_io_mode: status before 0x0
+V (1349) chip_generic: set_io_mode: status update 0x0
+W (1354) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (1367) cpu_start: Starting scheduler on PRO CPU.
+V (0) intr_alloc: esp_intr_alloc_intrstatus (cpu 1): checking args
+V (0) intr_alloc: esp_intr_alloc_intrstatus (cpu 1): Args okay. Resulting flags 0x40E
+D (10) intr_alloc: Connected src 25 to int 2 (cpu 1)
+I (10) cpu_start: Starting scheduler on APP CPU.
+D (1417) heap_init: New heap initialised at 0x3ffe0440
+D (1417) heap_init: New heap initialised at 0x3ffe4350
+V (1427) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (1427) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xE
+D (1427) intr_alloc: Connected src 16 to int 12 (cpu 0)
+D (1447) partition: Loading the partition table
+D (1447) nvs: nvs_flash_init_custom partition=nvs start=9 count=6
+
+****************************************
+OC_DEBUG not defined!
+APP_DEBUG defined!
+OC_CLIENT not defined!
+OC_SERVER defined!
+OC_IPV4 defined!
+ENABLE_LIGHT not defined!
+OC_SECURITY not defined!
+OC_DYNAMIC_ALLOCATION defined!
+OC_BLOCK_WISE defined!
+
+****************************************
+D (1507) event: running task for loop 0x3ffbf4cc
+D (1507) event: created task for loop 0x3ffbf4cc
+D (1517) event: created event loop 0x3ffbf4cc
+D (1517) nvs: nvs_open_from_partition misc 1
+D (1527) nvs: nvs_get_str_or_blob log
+I (1537) wifi:wifi driver task: 3ffc273c, prio:23, stack:6656, core=0
+V (1537) esp_adapter: thread sem create: sem=0x3ffbac3c
+V (1537) esp_adapter: thread sem get: sem=0x3ffbac3c
+I (1547) system_api: Base MAC address is not set, read default base MAC address from BLK0 of EFUSE
+D (1557) efuse: coding scheme 0
+D (1557) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1567) efuse: coding scheme 0
+D (1567) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1577) efuse: coding scheme 0
+D (1577) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1587) efuse: coding scheme 0
+D (1587) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1597) efuse: coding scheme 0
+D (1597) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1607) efuse: coding scheme 0
+D (1607) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1617) efuse: coding scheme 0
+D (1617) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+I (1627) system_api: Base MAC address is not set, read default base MAC address from BLK0 of EFUSE
+D (1637) efuse: coding scheme 0
+D (1637) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1647) efuse: coding scheme 0
+D (1647) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1657) efuse: coding scheme 0
+D (1657) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1667) efuse: coding scheme 0
+D (1667) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1677) efuse: coding scheme 0
+D (1677) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1687) efuse: coding scheme 0
+D (1687) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1697) efuse: coding scheme 0
+D (1697) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (1707) nvs: nvs_open_from_partition nvs.net80211 1
+D (1717) nvs: nvs_get opmode 1
+D (1717) nvs: nvs_get_str_or_blob sta.ssid
+D (1717) nvs: nvs_get_str_or_blob sta.mac
+D (1727) nvs: nvs_get sta.authmode 1
+D (1727) nvs: nvs_get_str_or_blob sta.pswd
+D (1737) nvs: nvs_get_str_or_blob sta.pmk
+D (1737) nvs: nvs_get sta.chan 1
+D (1737) nvs: nvs_get auto.conn 1
+D (1747) nvs: nvs_get bssid.set 1
+D (1747) nvs: nvs_get_str_or_blob sta.bssid
+D (1747) nvs: nvs_get sta.lis_intval 2
+D (1757) nvs: nvs_get sta.phym 1
+D (1757) nvs: nvs_get sta.phybw 1
+D (1757) nvs: nvs_get_str_or_blob sta.apsw
+D (1767) nvs: nvs_get_str_or_blob sta.apinfo
+D (1777) nvs: nvs_get sta.scan_method 1
+D (1777) nvs: nvs_get sta.sort_method 1
+D (1777) nvs: nvs_get sta.minrssi 1
+D (1777) nvs: nvs_get sta.minauth 1
+D (1787) nvs: nvs_get sta.pmf_e 1
+D (1787) nvs: nvs_get sta.pmf_r 1
+D (1797) nvs: nvs_get_str_or_blob ap.ssid
+D (1797) nvs: nvs_get_str_or_blob ap.mac
+D (1797) nvs: nvs_get_str_or_blob ap.passwd
+D (1807) nvs: nvs_get_str_or_blob ap.pmk
+D (1807) nvs: nvs_get ap.chan 1
+D (1807) nvs: nvs_get ap.authmode 1
+D (1817) nvs: nvs_get ap.hidden 1
+D (1817) nvs: nvs_get ap.max.conn 1
+D (1827) nvs: nvs_get bcn.interval 2
+D (1827) nvs: nvs_get ap.phym 1
+D (1827) nvs: nvs_get ap.phybw 1
+D (1837) nvs: nvs_get ap.sndchan 1
+D (1837) nvs: nvs_get ap.pmf_e 1
+D (1837) nvs: nvs_get ap.pmf_r 1
+D (1847) nvs: nvs_get lorate 1
+D (1847) nvs: nvs_set_blob sta.mac 6
+D (1847) nvs: nvs_set_blob ap.mac 6
+I (1857) wifi:wifi firmware version: aa5336b
+I (1857) wifi:config NVS flash: enabled
+I (1857) wifi:config nano formating: disabled
+I (1867) wifi:Init dynamic tx buffer num: 32
+I (1867) wifi:Init data frame dynamic rx buffer num: 32
+I (1877) wifi:Init management frame dynamic rx buffer num: 32
+I (1877) wifi:Init management short buffer num: 32
+I (1887) wifi:Init static rx buffer size: 1600
+I (1887) wifi:Init static rx buffer num: 10
+I (1887) wifi:Init dynamic rx buffer num: 32
+V (1897) esp_adapter: thread sem get: sem=0x3ffbac3c
+V (1897) esp_adapter: thread sem get: sem=0x3ffbac3c
+V (1907) esp_adapter: thread sem get: sem=0x3ffbac3c
+D (1907) RTC_MODULE: Wi-Fi takes adc2 lock.
+D (1917) phy_init: loading PHY init data from application binary
+D (1917) nvs: nvs_open_from_partition phy 0
+D (1927) nvs: nvs_get cal_version 4
+V (1927) phy_init: phy_get_rf_cal_version: 4180
+
+D (1937) nvs: nvs_get_str_or_blob cal_mac
+D (1937) efuse: coding scheme 0
+D (1937) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (1947) efuse: coding scheme 0
+D (1947) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bit
+D (1957) efuse: coding scheme 0
+D (1957) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (1967) efuse: coding scheme 0
+D (1967) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (1977) efuse: coding scheme 0
+D (1977) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (1987) efuse: coding scheme 0
+D (1987) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (1997) efuse: coding scheme 0
+D (1997) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+D (2007) nvs: nvs_get_str_or_blob cal_data
+D (2017) nvs: nvs_close 3
+D (2017) efuse: coding scheme 0
+D (2017) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 8 bit
+D (2027) efuse: coding scheme 0
+D (2027) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 0 bitD (2037) efuse: coding scheme 0
+D (2037) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 24 bit
+D (2047) efuse: coding scheme 0
+D (2047) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 16 bit
+D (2057) efuse: coding scheme 0
+D (2057) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 8 bit
+D (2067) efuse: coding scheme 0
+D (2067) efuse: In EFUSE_BLK0__DATA1_REG is used 8 bits starting with 0 bit
+D (2077) efuse: coding scheme 0
+D (2077) efuse: In EFUSE_BLK0__DATA2_REG is used 8 bits starting with 16 bit
+I (2177) phy: phy_version: 4180, cb3948e, Sep 12 2019, 16:39:13, 0, 0
+I (2177) wifi:mode : sta (84:0d:8e:e6:6c:9c)
+D (2187) system_event: SYSTEM_EVENT_STA_START
+D (2187) event: running post WIFI_EVENT:2 with handler 0x400fb60c on loop 0x3ffbf4cc
+0x400fb60c: handle_sta_start at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/event_handlers.c:140
+
+I (2187) ocf-svr: iotivity server task started
+V (2187) tcpip_adapter: check: local, if=0 fn=0x400fbc10
+0x400fbc10: tcpip_adapter_start_api at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c:254
+
+
+V (2207) tcpip_adapter: call api in lwip: ret=0x0, give sem
+V (2207) tcpip_adapter: check: remote, if=0 fn=0x400fbc10
+0x400fbc10: tcpip_adapter_start_api at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c:254
+
+
+D (2217) event: running post SYSTEM_EVENT:2 with handler 0x400fc790 on loop 0x3ffbf4cc
+0x400fc790: esp_event_post_to_user at C:/Users/hillk/Desktop/esp-idf/components/esp_event/event_loop_legacy.c:31
+
+V (2217) esp_adapter: thread sem create: sem=0x3ffcb2dc
+V (2227) esp_adapter: thread sem get: sem=0x3ffcb2dc
+I (4287) wifi:new:<13,2>, old:<1,0>, ap:<255,255>, sta:<13,2>, prof:1
+I (5257) wifi:state: init -> auth (b0)
+I (5267) wifi:state: auth -> assoc (0)
+I (5277) wifi:state: assoc -> run (10)
+D (5277) wpa: IEEE 802.1X RX: version=1 type=3 length=117
+
+D (5277) wpa:   EAPOL-Key type=2
+
+D (5277) wpa:   key_info 0x8a (ver=2 keyidx=0 rsvd=0 Pairwise Ack)
+
+D (5277) wpa:   key_length=16 key_data_length=22
+
+D (5287) wpa: WPA: RX EAPOL-Key - hexdump(len=121):
+
+D (5287) wpa:  01
+D (5297) wpa:  03
+D (5297) wpa:  00
+D (5297) wpa:  75
+D (5297) wpa:  02
+D (5297) wpa:  00
+D (5307) wpa:  8a
+D (5307) wpa:  00
+D (5307) wpa:  10
+D (5307) wpa:  00
+D (5307) wpa:  00
+D (5317) wpa:  00
+D (5317) wpa:  00
+D (5317) wpa:  00
+D (5317) wpa:  00
+D (5317) wpa:  00
+D (5327) wpa: 
+
+D (5327) wpa:  01
+D (5327) wpa:  1b
+D (5327) wpa:  8e
+D (5327) wpa:  6a
+D (5337) wpa:  64
+D (5337) wpa:  c8
+D (5337) wpa:  8d
+D (5337) wpa:  e3
+D (5337) wpa:  58
+D (5347) wpa:  70
+D (5347) wpa:  30
+D (5347) wpa:  49
+D (5347) wpa:  f4
+D (5347) wpa:  34
+D (5357) wpa:  b2
+D (5357) wpa:  6b
+D (5357) wpa: 
+
+D (5357) wpa:  c2
+D (5357) wpa:  b9
+D (5367) wpa:  82
+D (5367) wpa:  85
+D (5367) wpa:  98
+D (5367) wpa:  36
+D (5367) wpa:  1c
+D (5377) wpa:  57
+D (5377) wpa:  31
+D (5377) wpa:  07
+D (5377) wpa:  8f
+D (5377) wpa:  bc
+D (5387) wpa:  6d
+D (5387) wpa:  90
+D (5387) wpa:  e7
+D (5387) wpa:  27
+D (5387) wpa: 
+
+D (5397) wpa:  87
+D (5397) wpa:  00
+D (5397) wpa:  00
+D (5397) wpa:  00
+D (5397) wpa:  00
+D (5407) wpa:  00
+D (5407) wpa:  00
+D (5407) wpa:  00
+D (5407) wpa:  00
+D (5407) wpa:  00
+D (5417) wpa:  00
+D (5417) wpa:  00
+D (5417) wpa:  00
+D (5417) wpa:  00
+D (5417) wpa:  00
+D (5427) wpa:  00
+D (5427) wpa: 
+
+D (5427) wpa:  00
+D (5427) wpa:  00
+D (5427) wpa:  00
+D (5427) wpa:  00
+D (5437) wpa:  00
+D (5437) wpa:  00
+D (5437) wpa:  00
+D (5437) wpa:  00
+D (5437) wpa:  00
+D (5447) wpa:  00
+D (5447) wpa:  00
+D (5447) wpa:  00
+D (5447) wpa:  00
+D (5447) wpa:  00
+D (5457) wpa:  00
+D (5457) wpa:  00
+D (5457) wpa: 
+
+D (5457) wpa:  00
+D (5457) wpa:  00
+D (5467) wpa:  00
+D (5467) wpa:  00
+D (5467) wpa:  00
+D (5467) wpa:  00
+D (5467) wpa:  00
+D (5477) wpa:  00
+D (5477) wpa:  00
+D (5477) wpa:  00
+D (5477) wpa:  00
+D (5477) wpa:  00
+D (5487) wpa:  00
+D (5487) wpa:  00
+D (5487) wpa:  00
+D (5487) wpa:  00
+D (5487) wpa: 
+
+D (5497) wpa:  00
+D (5497) wpa:  00
+D (5497) wpa:  16
+D (5497) wpa:  dd
+D (5497) wpa:  14
+D (5507) wpa:  00
+D (5507) wpa:  0f
+D (5507) wpa:  ac
+D (5507) wpa:  04
+D (5507) wpa:  00
+D (5517) wpa:  00
+D (5517) wpa:  00
+D (5517) wpa:  00
+D (5517) wpa:  00
+D (5517) wpa:  00
+D (5527) wpa:  00
+D (5527) wpa: 
+
+D (5527) wpa:  00
+D (5527) wpa:  00
+D (5527) wpa:  00
+D (5537) wpa:  00
+D (5537) wpa:  00
+D (5537) wpa:  00
+D (5537) wpa:  00
+D (5537) wpa:  00
+D (5547) wpa:  00
+D (5547) wpa: 
+
+D (5547) wpa: WPA 1/4-Way Handshake
+
+D (5547) wpa: RSN: msg 1/4 key data - hexdump(len=22):
+
+D (5557) wpa:  dd
+D (5557) wpa:  14
+D (5557) wpa:  00
+D (5567) wpa:  0f
+D (5567) wpa:  ac
+D (5567) wpa:  04
+D (5567) wpa:  00
+D (5567) wpa:  00
+D (5577) wpa:  00
+D (5577) wpa:  00
+D (5577) wpa:  00
+D (5577) wpa:  00
+D (5577) wpa:  00
+D (5587) wpa:  00
+D (5587) wpa:  00
+D (5587) wpa:  00
+D (5587) wpa: 
+
+D (5587) wpa:  00
+D (5597) wpa:  00
+D (5597) wpa:  00
+D (5597) wpa:  00
+D (5597) wpa:  00
+D (5597) wpa:  00
+D (5607) wpa: 
+
+D (5607) wpa: RSN: no matching PMKID found
+D (5607) wpa: WPA: PTK derivation - A1=84:0d:8e:e6:6c:9c A2=70:5d:cc:a7:01:a0
+
+D (5617) wpa: WPA: PMK - hexdump(len=32):
+
+D (5617) wpa:  32
+D (5627) wpa:  7c
+D (5627) wpa:  a2
+D (5627) wpa:  30
+D (5627) wpa:  df
+D (5627) wpa:  4e
+D (5637) wpa:  ad
+D (5637) wpa:  ef
+D (5637) wpa:  b5
+D (5637) wpa:  46
+D (5637) wpa:  69
+D (5647) wpa:  1d
+D (5647) wpa:  ae
+D (5647) wpa:  fd
+D (5647) wpa:  0c
+D (5647) wpa:  dd
+D (5657) wpa: 
+
+D (5657) wpa:  7f
+D (5657) wpa:  36
+D (5657) wpa:  83
+D (5657) wpa:  62
+D (5657) wpa:  03
+D (5667) wpa:  8f
+D (5667) wpa:  30
+D (5667) wpa:  30
+D (5667) wpa:  50
+D (5667) wpa:  97
+D (5677) wpa:  50
+D (5677) wpa:  fd
+D (5677) wpa:  f9
+D (5677) wpa:  ae
+D (5677) wpa:  c0
+D (5687) wpa:  a0
+D (5687) wpa: 
+
+D (5687) wpa: 
+
+D (5687) wpa: WPA: PTK - hexdump(len=48):
+
+D (5697) wpa:  23
+D (5697) wpa:  19
+D (5697) wpa:  99
+D (5697) wpa:  82
+D (5697) wpa:  2e
+D (5707) wpa:  5e
+D (5707) wpa:  5d
+D (5707) wpa:  39
+D (5707) wpa:  7e
+D (5707) wpa:  27
+D (5717) wpa:  de
+D (5717) wpa:  26
+D (5717) wpa:  7a
+D (5717) wpa:  a9
+D (5717) wpa:  bb
+D (5727) wpa:  35
+D (5727) wpa: 
+
+D (5727) wpa:  be
+D (5727) wpa:  85
+D (5727) wpa:  2a
+D (5737) wpa:  e5
+D (5737) wpa:  57
+D (5737) wpa:  dc
+D (5737) wpa:  43
+D (5737) wpa:  ac
+D (5747) wpa:  0b
+D (5747) wpa:  99
+D (5747) wpa:  ca
+D (5747) wpa:  ec
+D (5747) wpa:  6b
+D (5757) wpa:  d8
+D (5757) wpa:  f5
+D (5757) wpa:  0c
+D (5757) wpa: 
+
+D (5757) wpa:  46
+D (5767) wpa:  b2
+D (5767) wpa:  b8
+D (5767) wpa:  7c
+D (5767) wpa:  85
+D (5767) wpa:  1d
+D (5777) wpa:  47
+D (5777) wpa:  3b
+D (5777) wpa:  f4
+D (5777) wpa:  62
+D (5777) wpa:  20
+D (5787) wpa:  52
+D (5787) wpa:  4b
+D (5787) wpa:  b3
+D (5787) wpa:  8e
+D (5787) wpa:  9d
+D (5797) wpa: 
+
+D (5797) wpa: 
+
+D (5797) wpa: WPA: WPA IE for msg 2/4
+ - hexdump(len=22):
+
+D (5807) wpa:  30
+D (5807) wpa:  14
+D (5807) wpa:  01
+D (5807) wpa:  00
+D (5807) wpa:  00
+D (5817) wpa:  0f
+D (5817) wpa:  ac
+D (5817) wpa:  04
+D (5817) wpa:  01
+D (5817) wpa:  00
+D (5827) wpa:  00
+D (5827) wpa:  0f
+D (5827) wpa:  ac
+D (5827) wpa:  04
+D (5827) wpa:  01
+D (5837) wpa:  00
+D (5837) wpa: 
+
+D (5837) wpa:  00
+D (5837) wpa:  0f
+D (5837) wpa:  ac
+D (5847) wpa:  02
+D (5847) wpa:  00
+D (5847) wpa:  00
+D (5847) wpa: 
+
+D (5847) wpa: WPA Send EAPOL-Key 2/4
+
+D (5857) wpa: WPA: TX EAPOL-Key - hexdump(len=121):
+
+D (5857) wpa:  01
+D (5857) wpa:  03
+D (5867) wpa:  00
+D (5867) wpa:  75
+D (5867) wpa:  02
+D (5867) wpa:  01
+D (5867) wpa:  0a
+D (5877) wpa:  00
+D (5877) wpa:  00
+D (5877) wpa:  00
+D (5877) wpa:  00
+D (5877) wpa:  00
+D (5887) wpa:  00
+D (5887) wpa:  00
+D (5887) wpa:  00
+D (5887) wpa:  00
+D (5887) wpa: 
+
+D (5897) wpa:  01
+D (5897) wpa:  a1
+D (5897) wpa:  4a
+D (5897) wpa:  c3
+D (5897) wpa:  d5
+D (5907) wpa:  f1
+D (5907) wpa:  78
+D (5907) wpa:  1a
+D (5907) wpa:  f1
+D (5907) wpa:  5e
+D (5917) wpa:  6a
+D (5917) wpa:  9f
+D (5917) wpa:  79
+D (5917) wpa:  87
+D (5917) wpa:  d8
+D (5927) wpa:  db
+D (5927) wpa: 
+
+D (5927) wpa:  ca
+D (5927) wpa:  5f
+D (5927) wpa:  7e
+D (5937) wpa:  31
+D (5937) wpa:  b4
+D (5937) wpa:  6d
+D (5937) wpa:  7a
+D (5937) wpa:  45
+D (5947) wpa:  46
+D (5947) wpa:  9c
+D (5947) wpa:  7f
+D (5947) wpa:  b4
+D (5947) wpa:  19
+D (5957) wpa:  40
+D (5957) wpa:  19
+D (5957) wpa:  60
+D (5957) wpa: 
+
+D (5957) wpa:  c7
+D (5967) wpa:  00
+D (5967) wpa:  00
+D (5967) wpa:  00
+D (5967) wpa:  00
+D (5967) wpa:  00
+D (5977) wpa:  00
+D (5977) wpa:  00
+D (5977) wpa:  00
+D (5977) wpa:  00
+D (5977) wpa:  00
+D (5987) wpa:  00
+D (5987) wpa:  00
+D (5987) wpa:  00
+D (5987) wpa:  00
+D (5987) wpa:  00
+D (5997) wpa: 
+
+D (5997) wpa:  00
+D (5997) wpa:  00
+D (5997) wpa:  00
+D (5997) wpa:  00
+D (6007) wpa:  00
+D (6007) wpa:  00
+D (6007) wpa:  00
+D (6007) wpa:  00
+D (6007) wpa:  00
+D (6017) wpa:  00
+D (6017) wpa:  00
+D (6017) wpa:  00
+D (6017) wpa:  00
+D (6017) wpa:  00
+D (6027) wpa:  00
+D (6027) wpa:  00
+D (6027) wpa: 
+
+D (6027) wpa:  00
+D (6027) wpa:  82
+D (6037) wpa:  f7
+D (6037) wpa:  84
+D (6037) wpa:  2c
+D (6037) wpa:  9d
+D (6037) wpa:  72
+D (6047) wpa:  cb
+D (6047) wpa:  ab
+D (6047) wpa:  f6
+D (6047) wpa:  f2
+D (6047) wpa:  58
+D (6057) wpa:  a4
+D (6057) wpa:  a7
+D (6057) wpa:  69
+D (6057) wpa:  3f
+D (6057) wpa: 
+
+D (6067) wpa:  34
+D (6067) wpa:  00
+D (6067) wpa:  16
+D (6067) wpa:  30
+D (6067) wpa:  14
+D (6077) wpa:  01
+D (6077) wpa:  00
+D (6077) wpa:  00
+D (6077) wpa:  0f
+D (6077) wpa:  ac
+D (6087) wpa:  04
+D (6087) wpa:  01
+D (6087) wpa:  00
+D (6087) wpa:  00
+D (6087) wpa:  0f
+D (6097) wpa:  ac
+D (6097) wpa: 
+
+D (6097) wpa:  04
+D (6097) wpa:  01
+D (6097) wpa:  00
+D (6107) wpa:  00
+D (6107) wpa:  0f
+D (6107) wpa:  ac
+D (6107) wpa:  02
+D (6107) wpa:  00
+D (6117) wpa:  00
+D (6117) wpa: 
+
+D (6127) wpa: IEEE 802.1X RX: version=1 type=3 length=151
+
+D (6127) wpa:   EAPOL-Key type=2
+
+D (6127) wpa:   key_info 0x13ca (ver=2 keyidx=0 rsvd=0 Pairwise Install Ack MIC Secure Encr)
+
+D (6137) wpa:   key_length=16 key_data_length=56
+
+D (6137) wpa: WPA: RX EAPOL-Key - hexdump(len=155):
+
+D (6147) wpa:  01
+D (6147) wpa:  03
+D (6147) wpa:  00
+D (6147) wpa:  97
+D (6157) wpa:  02
+D (6157) wpa:  13
+D (6157) wpa:  ca
+D (6157) wpa:  00
+D (6157) wpa:  10
+D (6167) wpa:  00
+D (6167) wpa:  00
+D (6167) wpa:  00
+D (6167) wpa:  00
+D (6167) wpa:  00
+D (6177) wpa:  00
+D (6177) wpa:  00
+D (6177) wpa: 
+
+D (6177) wpa:  02
+D (6177) wpa:  1b
+D (6187) wpa:  8e
+D (6187) wpa:  6a
+D (6187) wpa:  64
+D (6187) wpa:  c8
+D (6187) wpa:  8d
+D (6197) wpa:  e3
+D (6197) wpa:  58
+D (6197) wpa:  70
+D (6197) wpa:  30
+D (6197) wpa:  49
+D (6207) wpa:  f4
+D (6207) wpa:  34
+D (6207) wpa:  b2
+D (6207) wpa:  6b
+D (6207) wpa: 
+
+D (6217) wpa:  c2
+D (6217) wpa:  b9
+D (6217) wpa:  82
+D (6217) wpa:  85
+D (6217) wpa:  98
+D (6227) wpa:  36
+D (6227) wpa:  1c
+D (6227) wpa:  57
+D (6227) wpa:  31
+D (6227) wpa:  07
+D (6237) wpa:  8f
+D (6237) wpa:  bc
+D (6237) wpa:  6d
+D (6237) wpa:  90
+D (6237) wpa:  e7
+D (6247) wpa:  27
+D (6247) wpa: 
+
+D (6247) wpa:  87
+D (6247) wpa:  1b
+D (6247) wpa:  8e
+D (6247) wpa:  6a
+D (6257) wpa:  64
+D (6257) wpa:  c8
+D (6257) wpa:  8d
+D (6257) wpa:  e3
+D (6257) wpa:  58
+D (6267) wpa:  70
+D (6267) wpa:  30
+D (6267) wpa:  49
+D (6267) wpa:  f4
+D (6267) wpa:  34
+D (6277) wpa:  b2
+D (6277) wpa:  6b
+D (6277) wpa: 
+
+D (6277) wpa:  c2
+D (6277) wpa:  23
+D (6287) wpa:  33
+D (6287) wpa:  01
+D (6287) wpa:  00
+D (6287) wpa:  00
+D (6287) wpa:  00
+D (6297) wpa:  00
+D (6297) wpa:  00
+D (6297) wpa:  00
+D (6297) wpa:  00
+D (6297) wpa:  00
+D (6307) wpa:  00
+D (6307) wpa:  00
+D (6307) wpa:  00
+D (6307) wpa:  00
+D (6307) wpa: 
+
+D (6317) wpa:  00
+D (6317) wpa:  e5
+D (6317) wpa:  7a
+D (6317) wpa:  e1
+D (6317) wpa:  b5
+D (6327) wpa:  70
+D (6327) wpa:  ee
+D (6327) wpa:  3d
+D (6327) wpa:  6c
+D (6327) wpa:  ec
+D (6337) wpa:  1f
+D (6337) wpa:  27
+D (6337) wpa:  4e
+D (6337) wpa:  19
+D (6337) wpa:  b9
+D (6347) wpa:  43
+D (6347) wpa: 
+
+D (6347) wpa:  f9
+D (6347) wpa:  00
+D (6347) wpa:  38
+D (6357) wpa:  2d
+D (6357) wpa:  6f
+D (6357) wpa:  2a
+D (6357) wpa:  2d
+D (6357) wpa:  6a
+D (6367) wpa:  3e
+D (6367) wpa:  33
+D (6367) wpa:  7d
+D (6367) wpa:  28
+D (6367) wpa:  a7
+D (6377) wpa:  53
+D (6377) wpa:  c4
+D (6377) wpa:  c5
+D (6377) wpa: 
+
+D (6377) wpa:  b0
+D (6387) wpa:  d6
+D (6387) wpa:  be
+D (6387) wpa:  52
+D (6387) wpa:  55
+D (6387) wpa:  e6
+D (6397) wpa:  6a
+D (6397) wpa:  63
+D (6397) wpa:  c8
+D (6397) wpa:  2a
+D (6397) wpa:  ab
+D (6407) wpa:  93
+D (6407) wpa:  cc
+D (6407) wpa:  2d
+D (6407) wpa:  34
+D (6407) wpa:  bb
+D (6417) wpa: 
+
+D (6417) wpa:  6f
+D (6417) wpa:  06
+D (6417) wpa:  8c
+D (6417) wpa:  94
+D (6427) wpa:  30
+D (6427) wpa:  ee
+D (6427) wpa:  0b
+D (6427) wpa:  34
+D (6427) wpa:  74
+D (6437) wpa:  0f
+D (6437) wpa:  1c
+D (6437) wpa:  7b
+D (6437) wpa:  81
+D (6437) wpa:  49
+D (6447) wpa:  63
+D (6447) wpa:  d5
+D (6447) wpa: 
+
+D (6447) wpa:  bc
+D (6447) wpa:  39
+D (6457) wpa:  71
+D (6457) wpa:  3b
+D (6457) wpa:  f8
+D (6457) wpa:  2b
+D (6457) wpa:  a3
+D (6467) wpa:  c3
+D (6467) wpa:  4a
+D (6467) wpa:  24
+D (6467) wpa:  c3
+D (6467) wpa: 
+
+D (6477) wpa: WPA 3/4-Way Handshake
+
+D (6477) wpa: WPA: No WPA/RSN IE for this AP known. Trying to get from scan results
+
+D (6487) wpa: WPA: Found the current AP from updated scan results
+
+D (6487) wpa: tx 4/4 txcb_flags=8192
+
+D (6497) wpa: WPA Send EAPOL-Key 4/4
+
+D (6497) wpa: WPA: TX EAPOL-Key - hexdump(len=99):
+
+D (6507) wpa:  01
+D (6507) wpa:  03
+D (6507) wpa:  00
+D (6507) wpa:  5f
+D (6507) wpa:  02
+D (6517) wpa:  03
+D (6517) wpa:  0a
+D (6517) wpa:  00
+D (6517) wpa:  00
+D (6517) wpa:  00
+D (6527) wpa:  00
+D (6527) wpa:  00
+D (6527) wpa:  00
+D (6527) wpa:  00
+D (6527) wpa:  00
+D (6537) wpa:  00
+D (6537) wpa: 
+
+D (6537) wpa:  02
+D (6537) wpa:  00
+D (6537) wpa:  00
+D (6547) wpa:  00
+D (6547) wpa:  00
+D (6547) wpa:  00
+D (6547) wpa:  00
+D (6547) wpa:  00
+D (6557) wpa:  00
+D (6557) wpa:  00
+D (6557) wpa:  00
+D (6557) wpa:  00
+D (6557) wpa:  00
+D (6567) wpa:  00
+D (6567) wpa:  00
+D (6567) wpa:  00
+D (6567) wpa: 
+
+D (6567) wpa:  00
+D (6577) wpa:  00
+D (6577) wpa:  00
+D (6577) wpa:  00
+D (6577) wpa:  00
+D (6577) wpa:  00
+D (6587) wpa:  00
+D (6587) wpa:  00
+D (6587) wpa:  00
+D (6587) wpa:  00
+D (6587) wpa:  00
+D (6597) wpa:  00
+D (6597) wpa:  00
+D (6597) wpa:  00
+D (6597) wpa:  00
+D (6597) wpa:  00
+D (6607) wpa: 
+
+D (6607) wpa:  00
+D (6607) wpa:  00
+D (6607) wpa:  00
+D (6607) wpa:  00
+D (6617) wpa:  00
+D (6617) wpa:  00
+D (6617) wpa:  00
+D (6617) wpa:  00
+D (6617) wpa:  00
+D (6627) wpa:  00
+D (6627) wpa:  00
+D (6627) wpa:  00
+D (6627) wpa:  00
+D (6627) wpa:  00
+D (6637) wpa:  00
+D (6637) wpa:  00
+D (6637) wpa: 
+
+D (6637) wpa:  00
+D (6637) wpa:  00
+D (6647) wpa:  00
+D (6647) wpa:  00
+D (6647) wpa:  00
+D (6647) wpa:  00
+D (6647) wpa:  00
+D (6657) wpa:  00
+D (6657) wpa:  00
+D (6657) wpa:  00
+D (6657) wpa:  00
+D (6657) wpa:  00
+D (6667) wpa:  00
+D (6667) wpa:  00
+D (6667) wpa:  00
+D (6667) wpa:  00
+D (6667) wpa: 
+
+D (6677) wpa:  00
+D (6677) wpa:  6d
+D (6677) wpa:  9d
+D (6677) wpa:  fe
+D (6677) wpa:  8e
+D (6687) wpa:  e6
+D (6687) wpa:  65
+D (6687) wpa:  fe
+D (6687) wpa:  00
+D (6687) wpa:  4d
+D (6697) wpa:  67
+D (6697) wpa:  c6
+D (6697) wpa:  64
+D (6697) wpa:  74
+D (6697) wpa:  92
+D (6707) wpa:  7f
+D (6707) wpa: 
+
+D (6707) wpa:  88
+D (6707) wpa:  00
+D (6707) wpa:  00
+D (6717) wpa: 
+
+D (6717) wpa: WPA: Installing PTK to the driver.
+
+D (6717) wpa: WPA: Installing GTK to the driver (keyidx=1 tx=0 len=16).
+
+D (6727) wpa: WPA: Key negotiation completed with 70:5d:cc:a7:01:a0 [PTK=CCMP GTK=CCMP]
+
+I (6737) wifi:connected with thermalcam1024, aid = 2, channel 13, 40D, bssid = 70:5d:cc:a7:01:a0
+I (6747) wifi:security: WPA2-PSK, phy: bgn, rssi: -41
+I (6747) wifi:pm start, type: 1
+
+D (6747) system_event: SYSTEM_EVENT_STA_CONNECTED, ssid:thermalcam1024, ssid_len:14, bssid:70:5d:cc:a7:01:a0, channel:13, authmode:3
+D (6767) event: running post WIFI_EVENT:4 with handler 0x400fb51c on loop 0x3ffbf4cc
+0x400fb51c: handle_sta_connected at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/event_handlers.c:155
+
+V (6767) esp_adapter: thread sem get: sem=0x3ffcb2dc
+V (6777) tcpip_adapter: check: local, if=0 fn=0x400fc1f8
+0x400fc1f8: tcpip_adapter_up_api at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c:323
+
+
+V (6777) tcpip_adapter: call api in lwip: ret=0x0, give sem
+V (6787) tcpip_adapter: check: remote, if=0 fn=0x400fc1f8
+0x400fc1f8: tcpip_adapter_up_api at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c:323
+
+
+I (6787) wifi:AP's beacon interval = 102400 us, DTIM period = 3
+V (6797) tcpip_adapter: check: local, if=0 fn=0x400fc71c
+0x400fc71c: tcpip_adapter_dhcpc_start_api at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c:1100
+
+
+D (6807) tcpip_adapter: dhcp client init ip/mask/gw to all-0
+D (6807) tcpip_adapter: if0 start ip lost tmr: enter
+D (6817) tcpip_adapter: if0 start ip lost tmr: no need start because netif=0x3ffcb1b4 interval=120 ip=0
+D (6827) tcpip_adapter: dhcp client start successfully
+V (6827) tcpip_adapter: call api in lwip: ret=0x0, give sem
+V (6837) tcpip_adapter: check: remote, if=0 fn=0x400fc71c
+0x400fc71c: tcpip_adapter_dhcpc_start_api at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/tcpip_adapter_lwip.c:1100
+
+
+D (6837) event: running post SYSTEM_EVENT:4 with handler 0x400fc790 on loop 0x3ffbf4cc
+0x400fc790: esp_event_post_to_user at C:/Users/hillk/Desktop/esp-idf/components/esp_event/event_loop_legacy.c:31
+
+D (7507) tcpip_adapter: if0 dhcpc cb
+D (7507) tcpip_adapter: if0 ip changed=1
+D (7507) system_event: SYSTEM_EVENT_STA_GOT_IP, ip:192.168.1.118, mask:255.255.255.0, gw:192.168.1.1
+D (7507) event: running post IP_EVENT:0 with handler 0x400fb378 on loop 0x3ffbf4cc
+0x400fb378: handle_sta_got_ip at C:/Users/hillk/Desktop/esp-idf/components/tcpip_adapter/event_handlers.c:101
+
+I (7517) tcpip_adapter: sta ip: 192.168.1.118, mask: 255.255.255.0, gw: 192.168.1.1
+D (7527) event: running post SYSTEM_EVENT:7 with handler 0x400fc790 on loop 0x3ffbf4cc
+0x400fc790: esp_event_post_to_user at C:/Users/hillk/Desktop/esp-idf/components/esp_event/event_loop_legacy.c:31
+
+I (7537) ocf-svr: got IPv4 addr:192.168.1.118
+server_freertos.c:275 oc_main_init+
+server_freertos.c:73 app_init+
+I (7547) ipadapter: Configured IPV4 Multicast address 224.0.1.187
+V (7557) pthread: pthread_create
+V (7557) pthread: pthread_task_func ENTER 0x400da1c0
+0x400da1c0: network_event_thread at D:/ws/esp32_iotivity-lite/components/iotivity/adapter/src/ipadapter.c:275
+
+V (7557) pthread: Created task 3ffbbf88
+V (7567) pthread: pthread_task_func START 0x400da1c0
+0x400da1c0: network_event_thread at D:/ws/esp32_iotivity-lite/components/iotivity/adapter/src/ipadapter.c:275
+
+server_freertos.c:77 app_init-
+server_freertos.c:147 register_resources+
+server_freertos.c:158 register_resource-
+server_freertos.c:277 oc_main_init: 0
+oc_main_poll+
+oc_main_poll=0
+E (22947) task_wdt: Task watchdog got triggered. The following tasks did not reset the watchdog in time:
+E (22947) task_wdt:  - IDLE1 (CPU 1)
+E (22947) task_wdt: Tasks currently running:
+E (22947) task_wdt: CPU 0: IDLE0
+E (22947) task_wdt: CPU 1: pthread
+D (38037) tcpip_adapter: if0 dhcpc cb
+D (38037) tcpip_adapter: if0 ip unchanged
+^C
+Traceback (most recent call last):
+  File "C:\Users\hillk\Desktop\esp-idf\tools/idf_monitor.py", line 865, in <module>
+    main()
+  File "C:\Users\hillk\Desktop\esp-idf\tools/idf_monitor.py", line 777, in main
+    monitor.main_loop()
+  File "C:\Users\hillk\Desktop\esp-idf\tools/idf_monitor.py", line 375, in main_loop
+    (event_tag, data) = self.event_queue.get()
+  File "C:\Users\hillk\AppData\Local\Programs\Python\Python38-32\lib\queue.py", line 170, in get
+    self.not_empty.wait()
+  File "C:\Users\hillk\AppData\Local\Programs\Python\Python38-32\lib\threading.py", line 302, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+Aborted!
+Checking Python dependencies...
+Executing action: monitor
+Running idf_monitor in directory d:\ws\esp32_iotivity-lite\examples
+Executing "C:\Users\hillk\.espressif\python_env\idf4.0_py3.8_env\Scripts\python.exe C:\Users\hillk\Desktop\esp-idf\tools/idf_monitor.py -p COM29 -b 115200 d:\ws\esp32_iotivity-lite\examples\build\esp32_server.elf -m 'C:\Users\hillk\.espressif\python_env\idf4.0_py3.8_env\Scripts\python.exe' 'C:\Users\hillk\Desktop\esp-idf\tools\idf.py' '-p' 'COM29'"...

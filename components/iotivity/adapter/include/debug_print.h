@@ -65,7 +65,7 @@ void print_debug(const char* data, const unsigned int len, const char* note, int
     do { \
         printf("[error]:");\
         printf(fmt, ##args); \
-        vTaskDelay(2000 / portTICK_RATE_MS);    \
+        vTaskDelay(8000 / portTICK_RATE_MS);    \
     } while(1)
 #else
 #define print_error(fmt, args...)  \

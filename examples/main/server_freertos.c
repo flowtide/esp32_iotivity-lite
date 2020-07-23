@@ -52,7 +52,13 @@ static struct timespec ts;
 static int quit = 0;
 static bool light_state = false;
 
-static const char *TAG = "iotivity server";
+static const char *TAG = "ocf-svr";
+
+#if 1
+#define DBG(...) printf("server_freertos.c:%d ", __LINE__), printf(__VA_ARGS__), printf("\n")
+#else
+#define DBG(...)
+#endif
 
 static void
 set_device_custom_property(void *data)
@@ -64,9 +70,12 @@ set_device_custom_property(void *data)
 static int
 app_init(void)
 {
+  DBG("app_init+");
   int ret = oc_init_platform("Intel", NULL, NULL);
   ret |= oc_add_device("/oic/d", "oic.d.light", "Kishen's light", "ocf.1.0.0",
                        "ocf.res.1.0.0", set_device_custom_property, NULL);
+  DBG("app_init-");
+
   return ret;
 }
 
@@ -135,6 +144,7 @@ put_light(oc_request_t *request, oc_interface_mask_t interface,
 static void
 register_resources(void)
 {
+  DBG("register_resources+");
   oc_resource_t *res = oc_new_resource("lightbulb", "/light/1", 1, 0);
   oc_resource_bind_resource_type(res, "oic.r.light");
   oc_resource_bind_resource_interface(res, OC_IF_RW);
@@ -145,6 +155,7 @@ register_resources(void)
   oc_resource_set_request_handler(res, OC_POST, post_light, NULL);
   oc_resource_set_request_handler(res, OC_PUT, put_light, NULL);
   oc_add_resource(res);
+  DBG("register_resource-");
 }
 
 static void
@@ -159,6 +170,7 @@ static void
 handle_signal(int signal)
 {
   (void)signal;
+  DBG("handle_signal: signal=%d", signal);
   signal_event_loop();
   quit = 1;
 }
@@ -260,15 +272,36 @@ static void server_main(void* pvParameter)
   oc_storage_config("./server_creds");
 #endif /* OC_SECURITY */
 
+  DBG("oc_main_init+");
   init = oc_main_init(&handler);
-  if (init < 0)
+  DBG("oc_main_init: %d", init);
+  if (init < 0) {
+    print_error("oc_main_init() failed\n");
     return;
+  }
 
   while (quit != 1) {
+    printf("oc_main_poll+\n");
     next_event = oc_main_poll();
+    printf("oc_main_poll=%lld\n", next_event);
     pthread_mutex_lock(&mutex);
     if (next_event == 0) {
+#if 0
+/* avoid following error:
+task_wdt: Task watchdog got triggered. The following tasks did not reset the watchdog in time:
+task_wdt:  - IDLE1 (CPU 1)
+task_wdt: Tasks currently running:
+task_wdt: CPU 0: IDLE0
+task_wdt: CPU 1: pthread
+*/
+      ts.tv_sec = 1;
+      ts.tv_nsec = 0;
+      pthread_cond_timedwait(&cv, &mutex, &ts);
+      printf("delay to avoid watchdog warning\n");
+      vTaskDelay(100);
+#else
       pthread_cond_wait(&cv, &mutex);
+#endif
     } else {
       ts.tv_sec = (next_event / OC_CLOCK_SECOND);
       ts.tv_nsec = (next_event % OC_CLOCK_SECOND) * 1.e09 / OC_CLOCK_SECOND;
@@ -293,12 +326,15 @@ void app_main(void)
 
     initialise_wifi();
 
+#if 1
     if ( xTaskCreate(server_main, "server_main", 15*1024, NULL, 5, NULL) != pdPASS ) {
         print_error("task create failed");
     }
-
+#endif
+#if 0
     if ( xTaskCreate(lightbulb_damon_task, "lightbulb_damon_task", 8192, NULL, 5, NULL) != pdPASS ) {
         print_error("task create failed");
     }
+#endif
 }
 

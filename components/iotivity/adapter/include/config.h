@@ -1,11 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// {{ ESP32 OCF PORTING
-#define OC_DYNAMIC_ALLOCATION 1
-#define OC_IPV4 1
-// }}
-
 /* Time resolution */
 #include <stdint.h>
 #include <time.h>
